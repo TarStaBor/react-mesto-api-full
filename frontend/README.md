@@ -11,12 +11,7 @@
 - менять аватар
 - добавлять и удалять фотографий
 - добавлять и удалять лайки
-
----
-
-## IP адресс ➡️ 84.201.165.199
-## [Ссылка на сайт ⬅️](https://mesto-frontend.tarstabor.nomoredomains.rocks/)
-## [Ссылка на сервер ⬅️](https://api.mesto-frontend.tarstabor.nomoredomains.rocks/)
+- менять имя и статус
 
 ---
 
@@ -69,4 +64,21 @@
 
 ---
 
-![Иллюстрация к проекту](https://habrastorage.org/webt/bs/ml/lo/bsmllozt2li3jmn_6ec8vy4krdq.png)
+## Планы по доработке:
+
+- ### Дописать Бэкенд
+
+---
+
+## [Посмотреть работу ⬅️](https://tarstabor.github.io/react-mesto-auth)
+
+
+
+
+![Иллюстрация к проекту](https://ru.reactjs.org/logo-og.png)
+
+
+
+
+
+

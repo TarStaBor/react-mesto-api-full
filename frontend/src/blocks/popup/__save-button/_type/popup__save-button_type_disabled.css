@@ -1,0 +1,6 @@
+.popup__save-button_type_disabled {
+  color: rgba(0, 0, 0, 0.3);
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: default;
+}

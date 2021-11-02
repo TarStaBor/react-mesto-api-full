@@ -1,0 +1,9 @@
+.elements__heart {
+  width: 22px;
+  height: 19px;
+  border: none;
+  background-color: #ffffff;
+  background-image: url(../../../images/heart-disabled.svg);
+  background-repeat: no-repeat;
+  background-size: 22px 19px;
+}

@@ -1,0 +1,17 @@
+.authorization__title {
+  margin: 60px auto 50px;
+  text-align: center;
+  font-family: Inter, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+@media screen and (min-width: 320px) and (max-width: 637px) {
+  .authorization__title {
+    padding-top: 40px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+  }
+}

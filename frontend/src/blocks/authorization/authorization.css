@@ -1,0 +1,16 @@
+.authorization {
+  max-width: 358px;
+  min-height: calc(100vh - 267px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: FFFFFF;
+  margin: auto;
+}
+
+@media screen and (min-width: 320px) and (max-width: 637px) {
+  .authorization {
+    min-height: 0;
+    padding-bottom: 290px;
+  }
+}

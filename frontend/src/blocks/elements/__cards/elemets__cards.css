@@ -1,0 +1,25 @@
+.elements__cards {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 20px 17px;
+  grid-template-columns: repeat(3, 282px);
+  grid-template-rows: repeat(2, 1fr);
+  list-style-type: none;
+}
+
+@media screen and (min-width: 638px) and (max-width: 900px) {
+  .elements__cards {
+    grid-template-columns: repeat(2, 282px);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 637px) {
+  .elements__cards {
+    grid-template-columns: repeat(1, 282px);
+    grid-template-rows: repeat(6, 1fr);
+    justify-content: center;
+  }
+}

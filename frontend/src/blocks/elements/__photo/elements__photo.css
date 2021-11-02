@@ -1,0 +1,9 @@
+.elements__photo {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 282px;
+  max-height: 282px;
+  object-fit: fill;
+  cursor: pointer;
+}

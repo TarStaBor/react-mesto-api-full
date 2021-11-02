@@ -1,0 +1,17 @@
+.link-opacity {
+  transition: opacity .5s;
+  cursor: pointer;
+
+}
+
+.link-opacity:hover {
+  opacity: .6;
+}
+
+.elements__heart.link-opacity:hover {
+  opacity: .5;
+}
+
+.popup__save-button.link-opacity:hover {
+  opacity: .8;
+}

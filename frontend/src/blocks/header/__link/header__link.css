@@ -1,0 +1,17 @@
+.header__link {
+  margin-top: 10px;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 637px) {
+  .header__link {
+    font-size: 14px;
+    margin-right: 27px;
+  }
+}
