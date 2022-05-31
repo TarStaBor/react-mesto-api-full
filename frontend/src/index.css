@@ -1,7 +1,5 @@
 /*-----vendor-----*/
 @import url(./vendor/normalize.css);
-/*-----fonts-----*/
-/* @import url(./fonts/inter.css); */
 /*-----opacity-----*/
 @import url(./blocks/link-opacity/link-opacity.css);
 /*-----root-----*/

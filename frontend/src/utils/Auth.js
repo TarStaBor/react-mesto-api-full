@@ -1,6 +1,6 @@
 export const BASE_URL = "https://api.mesto-frontend.tarstabor.nomoredomains.rocks";
 
-// метод обработки ответа сервера
+// Response processing
 function getResponseData(res) {
   if (res.ok) {
     return res.json();
@@ -11,10 +11,10 @@ function getResponseData(res) {
 export const register = (email, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
-    credentials: 'include',
+    credentials: "include",
     headers: {
-      authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json'
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       password,
@@ -33,8 +33,8 @@ export const authorize = (email, password) => {
   return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
-      authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json'
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       password,
@@ -53,9 +53,9 @@ export const getContent = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
-      authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json'
-    }
+      authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "application/json",
+    },
   })
     .then((response) => {
       return getResponseData(response);
