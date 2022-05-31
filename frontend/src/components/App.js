@@ -27,7 +27,6 @@ function App() {
   const history = useHistory();
   const [isSuccess, setIsSuccess] = useState(false);
 
-  // Закрытие попапов по нажатию Escape
   useEffect(() => {
     const closeByEscape = (e) => {
       if (e.key === "Escape") {
@@ -38,20 +37,19 @@ function App() {
     return () => document.removeEventListener("keydown", closeByEscape);
   }, []);
 
-  // Получаем набор карточек и информацию о пользователе
   useEffect(() => {
     if (loggedIn === true) {
-    Promise.all([api.getListCard(), api.getUserInfo()])
-      .then(([cards, userData]) => {
-        setCards(cards);
-        setCurrentUser(userData.user);
-      })
-      .catch((err) => {
-        console.log(err);
-      })};
+      Promise.all([api.getListCard(), api.getUserInfo()])
+        .then(([cards, userData]) => {
+          setCards(cards);
+          setCurrentUser(userData.user);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, [loggedIn]);
 
-  // Проверяем авторизацию на сайте
   useEffect(() => {
     if (localStorage.getItem("token")) {
       Auth.getContent(localStorage.token)
@@ -67,13 +65,11 @@ function App() {
 
   function signOut() {
     localStorage.removeItem("token");
-    setLoggedIn(false)
+    setLoggedIn(false);
     history.push("/login");
   }
 
-
-  // Запрос к АПИ на регистрацию
-  function registrtion(email, password) {
+  function registration(email, password) {
     Auth.register(email, password)
       .then(() => {
         setisInfoTooltipOpen(true);
@@ -86,7 +82,6 @@ function App() {
       });
   }
 
-  // Запрос к АПИ на авторизацию
   function authorization(email, password) {
     Auth.authorize(email, password)
       .then((data) => {
@@ -102,9 +97,8 @@ function App() {
       });
   }
 
-  // Добавление лайка
   function handleCardLike(card) {
-    const isLiked = card.likes.some(item => item === currentUser._id);
+    const isLiked = card.likes.some((item) => item === currentUser._id);
     api
       .changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
@@ -115,7 +109,6 @@ function App() {
       });
   }
 
-  // Добавление карточки
   function handleAddPlaceSubmit(data) {
     api
       .postCard(data)
@@ -128,19 +121,17 @@ function App() {
       });
   }
 
-  // Удаление карточки
   function handleCardDelete(card) {
     api
       .deleteCard(card._id)
       .then(() => {
-        setCards(cards => cards.filter(item => item._id !== card._id));
+        setCards((cards) => cards.filter((item) => item._id !== card._id));
       })
       .catch((err) => {
         console.log(err);
       });
   }
 
-  // Изменение профайла
   function handleUpdateUser({ name, about }) {
     api
       .patchUserInfo({ name, about })
@@ -153,7 +144,6 @@ function App() {
       });
   }
 
-  // Изменение аватара
   function handleUpdateAvatar(url) {
     const data = { avatar: url };
     api
@@ -213,7 +203,7 @@ function App() {
             ></ProtectedRoute>
 
             <Route path="/signup">
-              <Register registrtion={registrtion} onClose={closeAllPopups} />
+              <Register registration={registration} onClose={closeAllPopups} />
             </Route>
 
             <Route path="/signin">
@@ -221,27 +211,11 @@ function App() {
             </Route>
           </Switch>
           <Footer />
-          <PopupAvatar
-            isOpen={isEditAvatarPopupOpen}
-            onClose={closeAllPopups}
-            onUpdateAvatar={handleUpdateAvatar}
-          />
-          <EditProfilePopup
-            isOpen={isEditProfilePopupOpen}
-            onClose={closeAllPopups}
-            onUpdateUser={handleUpdateUser}
-          />
-          <AddPlacePopup
-            isOpen={isAddPlacePopupOpen}
-            onClose={closeAllPopups}
-            onAddPlace={handleAddPlaceSubmit}
-          />
+          <PopupAvatar isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
+          <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
+          <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit} />
           <ImagePopup card={selectedCard} onClose={closeAllPopups} />
-          <InfoTooltip
-            isInfoTooltipOpen={isInfoTooltipOpen}
-            isSuccess={isSuccess}
-            onClose={closeAllPopups}
-          />
+          <InfoTooltip isInfoTooltipOpen={isInfoTooltipOpen} isSuccess={isSuccess} onClose={closeAllPopups} />
         </div>
       </CurrentUserContext.Provider>
     </>

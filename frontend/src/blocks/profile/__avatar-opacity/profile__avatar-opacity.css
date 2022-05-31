@@ -1,13 +1,12 @@
 .profile__avatar-opacity {
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   cursor: pointer;
-
 }
 
- .profile__avatar-opacity:hover .profile__icon {
-  opacity: .2;
+.profile__avatar-opacity:hover .profile__icon {
+  opacity: 0.2;
 }
 
 .profile__avatar-opacity:hover .profile__pencil {
   opacity: 1;
-} 
+}
